@@ -1,0 +1,14 @@
+
+.ctrlPane {
+    -fx-hgap: 6pt;
+    -fx-padding: 10pt;
+}
+
+.ctrlPane HBox {
+    -fx-alignment: center-left;
+    -fx-spacing: 4pt;
+}
+
+.ctrlPane TextField {
+    -fx-pref-column-count: 5;
+}

@@ -1,0 +1,39 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="rwt.fview.MainWinCtl">
+    <stylesheets>
+        <URL value="@MainWin.css" />
+    </stylesheets>
+
+    <top>
+        <MenuBar>
+            <Menu text="File">
+                <MenuItem text="Open" />
+                <MenuItem text="Hex View" />
+                <MenuItem text="Text View" />
+            </Menu>
+        </MenuBar>
+    </top>
+
+    <center>
+        <VBox>
+            <FlowPane styleClass="ctrlPane">
+                <HBox>
+                    <Label>Block #:</Label>
+                    <Button onAction="#dnBlock">&lt;--</Button>
+                    <TextField fx:id="blockNbr">00000</TextField>
+                    <Button onAction="#upBlock">--&gt;</Button>
+                </HBox>
+                <Separator orientation="VERTICAL" />
+                <HBox>
+                    <Label>Block Size:</Label>
+                    <TextField fx:id="blockSize">10</TextField>
+                    <ComboBox fx:id="blockSizeLevel" />
+                </HBox>
+            </FlowPane>
+            <TextArea VBox.vgrow="ALWAYS">Here is where the text goes.</TextArea>
+        </VBox>
+    </center>
+</BorderPane>
