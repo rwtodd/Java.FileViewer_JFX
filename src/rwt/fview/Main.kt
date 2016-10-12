@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader
 import javafx.scene.Parent
 import javafx.scene.Scene
 import javafx.stage.Stage
+import java.io.File
 
 /**
  * Getting the program started.
@@ -16,7 +17,12 @@ fun main(args: Array<String>) {
 
 class Main : Application() {
     override fun start(primaryStage: Stage?) {
-        val root = FXMLLoader.load<Parent>(javaClass.getResource("/fxml/MainWin.fxml"))
+        val ldr = FXMLLoader(javaClass.getResource("/fxml/MainWin.fxml"))
+        val root = ldr.load<Parent>()
+        val rawparams = this.parameters.raw
+        if(rawparams.size > 0) {
+            ldr.getController<MainWinCtl>().newFile(File(rawparams[0]))
+        }
         with(primaryStage!!) {
             title = "File Viewer"
             scene = Scene(root)

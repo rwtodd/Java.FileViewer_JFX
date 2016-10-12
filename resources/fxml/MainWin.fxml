@@ -10,7 +10,7 @@
     <top>
         <MenuBar>
             <Menu text="File">
-                <MenuItem text="Open" />
+                <MenuItem text="Open" onAction="#selectFile" />
                 <MenuItem text="Hex View" />
                 <MenuItem text="Text View" />
             </Menu>
@@ -33,7 +33,7 @@
                     <ComboBox fx:id="blockSizeLevel" />
                 </HBox>
             </FlowPane>
-            <TextArea VBox.vgrow="ALWAYS">Here is where the text goes.</TextArea>
+            <TextArea VBox.vgrow="ALWAYS" fx:id="viewZone">Here is where the text goes.</TextArea>
         </VBox>
     </center>
 </BorderPane>
